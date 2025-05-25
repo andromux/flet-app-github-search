@@ -4,15 +4,17 @@
 
 1. Estructura General
 
+```bash
 import flet as ft
 import httpx
 from datetime import datetime
+```
 
-flet: librería para crear interfaces gráficas responsivas con Python.
+`flet`: librería para crear interfaces gráficas responsivas con Python.
 
-httpx: cliente HTTP para hacer peticiones a la API de GitHub.
+`httpx`: cliente HTTP para hacer peticiones a la API de GitHub.
 
-datetime: para convertir y formatear fechas.
+`datetime`: para convertir y formatear fechas.
 
 
 
@@ -20,9 +22,10 @@ datetime: para convertir y formatear fechas.
 
 2. Clase GitHubRepo
 
+```
 class GitHubRepo:
     def __init__(self, repo_data):
-        ...
+```
 
 Esta clase convierte los datos crudos del JSON de GitHub en un objeto organizado. Esto ayuda a manejar la información más fácilmente cuando se crea la UI.
 
@@ -31,9 +34,10 @@ Esta clase convierte los datos crudos del JSON de GitHub en un objeto organizado
 
 3. Configuración de la página
 
+```
 page.title = "Termux GitHub Hunter"
 page.theme_mode = ft.ThemeMode.DARK
-...
+```
 
 Establece título, modo oscuro, color de fondo, scroll automático, y padding.
 
@@ -45,12 +49,13 @@ Esta sección define la base visual de la app.
 
 4. AppBar personalizada con botones sociales
 
+```
 def setup_appbar():
-    ...
+```
 
-Usa ft.AppBar para mostrar el nombre de la app y botones que abren redes sociales en el navegador.
+Usa `ft.AppBar` para mostrar el nombre de la app y botones que abren redes sociales en el navegador.
 
-Los íconos se cargan desde imágenes locales (assets_dir="assets").
+Los íconos se cargan desde imágenes locales `(assets_dir="assets")`.
 
 
 
@@ -58,9 +63,11 @@ Los íconos se cargan desde imágenes locales (assets_dir="assets").
 
 5. Contenedor de resultados con diseño responsive
 
+```
 repos_container = ft.ResponsiveRow(...)
+```
 
-Usa ResponsiveRow, que adapta el número de columnas en función del tamaño de pantalla.
+Usa `ResponsiveRow`, que adapta el número de columnas en función del tamaño de pantalla.
 
 Cada tarjeta de repositorio se adapta usando col={"xs": 12, "md": 6, "lg": 4}.
 
@@ -70,8 +77,10 @@ Cada tarjeta de repositorio se adapta usando col={"xs": 12, "md": 6, "lg": 4}.
 
 6. Formato de fecha y tamaño
 
-def format_date(date_str): ...
-def format_size(size_kb): ...
+```
+def format_date(date_str):
+def format_size(size_kb):
+```
 
 Convierte datos como "2023-11-24T23:00:00Z" a "24/11/2023".
 
@@ -83,11 +92,13 @@ Convierte KB a MB si es mayor de 1024.
 
 7. Tarjeta interactiva de repositorio
 
+```
 def create_repo_card(repo: GitHubRepo): ...
+```
 
 Cada tarjeta tiene vista resumida y vista detallada.
 
-Usa AnimatedSwitcher para cambiar entre ambas con animación SCALE.
+Usa `AnimatedSwitcher` para cambiar entre ambas con animación SCALE.
 
 
 
@@ -95,11 +106,12 @@ Usa AnimatedSwitcher para cambiar entre ambas con animación SCALE.
 
 8. Buscar repositorios en GitHub
 
-def search_repos(term="termux", append=False): ...
+```
+def search_repos(term="termux", append=False):
+```
+Hace una petición a `https://api.github.com/search/repositories`.
 
-Hace una petición a https://api.github.com/search/repositories.
-
-Usa paginación (page=1, 2...) para cargar más resultados.
+Usa paginación (`page=1, 2...`) para cargar más resultados.
 
 Controla si borra los resultados previos (append=False) o agrega más (append=True).
 
@@ -109,12 +121,14 @@ Controla si borra los resultados previos (append=False) o agrega más (append=Tr
 
 9. Buscador
 
+```
 search_field = ft.TextField(...)
 search_btn = ft.ElevatedButton(...)
+```
 
-Input para que el usuario escriba su búsqueda.
+`Input` para que el usuario escriba su búsqueda.
 
-El botón lanza search_repos() con el término ingresado.
+El botón lanza `search_repos()` con el término ingresado.
 
 
 
@@ -122,23 +136,23 @@ El botón lanza search_repos() con el término ingresado.
 
 10. Diseño responsive
 
+```
 ft.ResponsiveRow([search_field, search_btn], spacing=10)
+```
 
 Hace que los elementos se acomoden según el ancho de pantalla.
 
-Gracias a las propiedades col={"xs": 12, "md": 9}, funciona perfecto en móviles y escritorio.
-
-
+Gracias a las propiedades `col={"xs": 12, "md": 9}`, funciona perfecto en móviles y escritorio.
 
 ---
 
 11. Ejecución
 
+```
 ft.app(target=main, assets_dir="assets")
+```
 
 Lanza la app y carga las imágenes sociales desde la carpeta assets.
-
-
 
 ---
 
@@ -154,16 +168,16 @@ Paso a paso:
 
 3. Diseña la interfaz con Flet:
 
-Usa TextField, ElevatedButton, Container, ResponsiveRow.
+Usa `TextField`, `ElevatedButton`, `Container`, `ResponsiveRow`.
 
-Añade animaciones (AnimatedSwitcher) para interactividad.
+Añade animaciones (`AnimatedSwitcher`) para interactividad.
 
 
 
 4. Haz tu diseño responsive:
 
-Usa col={"xs": 12, "md": 6, "lg": 4} en contenedores.
+Usa `col={"xs": 12, "md": 6, "lg": 4}` en contenedores.
 
 
 
-5. Agrega eventos con on_click, on_submit, y actualiza con page.update().
+5. Agrega eventos con `on_click`, `on_submit`, y actualiza con `page.update()`.
