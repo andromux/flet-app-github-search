@@ -3,6 +3,11 @@
 
 para buscar repositorios de GitHub relacionados con "Termux", y está pensado para ser una guía educativa para que los usuarios puedan crear su propia app. Vamos a desglosarlo por secciones para entender su funcionalidad y cómo podrías replicarla o modificarla.
 
+## ¿Te gustó este repositorio?
+
+- Si te ha gustado este proyecto, ¡regálame una estrella por favor!
+
+[![GitHub Stars](https://img.shields.io/github/stars/andromux/flet-app-github-search?style=social)](https://github.com/andromux/flet-app-github-search/stargazers)
 
 1. Estructura General
 
