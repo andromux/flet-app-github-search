@@ -1,5 +1,7 @@
 
-### Este código Flet en Python crea una interfaz moderna, responsiva y funcional para buscar repositorios de GitHub relacionados con "Termux", y está pensado para ser una guía educativa para que los usuarios puedan crear su propia app. Vamos a desglosarlo por secciones para entender su funcionalidad y cómo podrías replicarla o modificarla.
+### Flet en Python crea un Apk android una interfaz moderna, responsiva y funcional
+
+para buscar repositorios de GitHub relacionados con "Termux", y está pensado para ser una guía educativa para que los usuarios puedan crear su propia app. Vamos a desglosarlo por secciones para entender su funcionalidad y cómo podrías replicarla o modificarla.
 
 
 1. Estructura General
