@@ -1,0 +1,56 @@
+[project]
+name = "andromux-org"
+version = "0.1.0"
+description = "Buscar repos de github para termux o general"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "ANOG", email = "andromux@proton.me" }
+]
+dependencies = [
+  "flet==0.27.6",
+  "httpx==0.28.1",
+]
+
+[tool.flet]
+# org name in reverse domain name notation, e.g. "com.mycompany".
+# Combined with project.name to build bundle ID for iOS and Android apps
+org = "com.andromux.org"
+
+# project display name that is used as an app title on Android and iOS home screens,
+# shown in window titles and about app dialogs on desktop.
+product = "ANDRMUX ORG"
+
+# company name to display in about app dialogs
+company = "Andromux"
+
+# copyright text to display in about app dialogs
+copyright = "Copyright (C) 2025 by Andromux"
+
+[tool.flet.app]
+path = "src"
+
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.27.6",
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.27.6"}
+
+[tool.flet.android]
+min_sdk_version = 30
+target_sdk_version = 34
+dependencies = [
+  "flet==0.27.6",
+  "flet-permission-handler==0.1.0"
+]
+
+[tool.flet.android.permission]
+"android.permission.INTERNET" = true
+"android.permission.READ_MEDIA_IMAGES" = true
+"android.permission.READ_EXTERNAL_STORAGE" = true
+"android.permission.WRITE_EXTERNAL_STORAGE" = true
