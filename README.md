@@ -4,11 +4,25 @@
 para buscar repositorios de GitHub relacionados con "Termux", y está pensado para ser una guía educativa para que los usuarios puedan crear su propia app. Vamos a desglosarlo por secciones para entender su funcionalidad y cómo podrías replicarla o modificarla.
 
 ## ¿Te gustó este repositorio?
+_______________
 
-- Si te ha gustado este proyecto, ¡regálame una estrella por favor!
 
-[![GitHub Stars](https://img.shields.io/github/stars/andromux/flet-app-github-search?style=social)](https://github.com/andromux/flet-app-github-search/stargazers)
+<div align="center">
 
+  <h3>¿Te gustó este repositorio?</h3>
+  <p>¡Regálame una estrella o haz un fork si quieres contribuir!</p>
+
+  <a href="https://github.com/andromux/flet-app-github-search/stargazers">
+    <img src="https://img.shields.io/github/stars/andromux/flet-app-github-search?style=social" alt="GitHub Stars"/>
+  </a>
+
+  <a href="https://github.com/andromux/flet-app-github-search/fork">
+    <img src="https://img.shields.io/github/forks/andromux/flet-app-github-search?style=social" alt="GitHub Forks"/>
+  </a>
+
+</div>
+
+_______________
 1. Estructura General
 
 ```bash
